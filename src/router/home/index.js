@@ -1,13 +1,15 @@
+const {getList} = require('../../controller/home')
+const {SuccessModel} = require('../../model/baseModel')
 const handleHomeRouter = (req, res) => {
   const method = req.method
-  const url = req.url
-  const path = url.split('?')[0]
+  const path = req.url.split('?')[0]
+  const query = req.query
 
   if (method === 'GET') {
     if (path === '/api/home/recommend') {
-      return {
-        msg: '获取首页推荐'
-      }
+      getList(query).then(data => {
+        res.end(JSON.stringify(new SuccessModel(data)))
+      })
     }
 
     if (path === '/api/home/discovery') {

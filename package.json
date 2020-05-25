@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/dkg2016/eyepetizer_server#readme",
   "devDependencies": {
+    "axios": "^0.19.2",
     "nodemon": "^2.0.4"
   }
 }
