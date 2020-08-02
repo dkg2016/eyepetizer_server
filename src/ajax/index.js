@@ -12,6 +12,15 @@ const ajax = (options) => {
     }
     if (method === 'GET') {
       params.randomTime = new Date().getTime()
+      params.isOldUser = true
+      params.udid = "3c51c24ae6344c318c39d4b9f8c93d9aa78920ce"
+      params.vc = "591"
+      params.vn = "6.2.1"
+      params.size = "1080X1920"
+      params.deviceModel = "MI 4LTE",
+      params.first_channel = "yingyongbao"
+      params.last_channel = "yingyongbao"
+      params.system_version_code = "28"
       config.params = params
     } else {
       config.data = params
