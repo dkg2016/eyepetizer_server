@@ -9,7 +9,8 @@ const serverHandle = (req, res) => {
   req.path = url.split('?')[0]
   req.query = querystring.parse(url.split('?')[1])
 
-  if (url === '/api/home/recommend') {
+  // 处理首页的请求
+  if (url.indexOf('/api/home/') > -1) {
     handleHomeRouter(req, res)
   }
 }
