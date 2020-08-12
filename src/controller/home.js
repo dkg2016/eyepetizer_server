@@ -3,9 +3,7 @@ const ajax = require('../ajax/index')
 const getAllRec = (query) => {
   return ajax({
     url: '/v5/index/tab/allRec',
-    data: {
-      "page": 0
-    }
+    data: query || {}
   }).then(res => {
     return res.data
   })
@@ -14,7 +12,8 @@ const getAllRec = (query) => {
 // 首页 发现
 const getDiscovery = (query) => {
   return ajax({
-    url: '/v7/index/tab/discovery'
+    url: '/v7/index/tab/discovery',
+    data: query || {}
   }).then(res => {
     return res.data
   })
@@ -23,7 +22,8 @@ const getDiscovery = (query) => {
 // 首页 日报
 const getFeed = (query) => {
   return ajax({
-    url: '/v5/index/tab/feed'
+    url: '/v5/index/tab/feed',
+    data: query || {}
   }).then(res => {
     return res.data
   })
@@ -33,9 +33,7 @@ const getFeed = (query) => {
 const getRoamingCalendar = (query) => {
   return ajax({
     url: '/v7/roamingCalendar/index',
-    data: {
-      date: '2020-08-03'
-    }
+    data: query || {}
   }).then(res => {
     return res.data
   })
@@ -45,9 +43,7 @@ const getRoamingCalendar = (query) => {
 const getSearch = (query) => {
   return ajax({
     url: '/v3/search',
-    data: {
-      query: '一个'
-    }
+    data: query || {}
   }).then(res => {
     return res.data
   })
@@ -57,6 +53,7 @@ const getSearch = (query) => {
 const getSearchHot = (query) => {
   return ajax({
     url: '/v3/queries/hot',
+    data: query || {}
   }).then(res => {
     return res.data
   })
